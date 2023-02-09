@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Budget Tracker</h1>
+
+    <h1>$<%=balance%></h1>
+    <%for (transaction of transactions) {%>
+    <p><%=transaction.type%> of $<%=transaction.amount%></p>
+    <%}%>
+    <form method="post" action="/">
+      <input type="text" name="amount" placeholder="Log your Income/Expense" />
+      <select name="type">
+        <option selected></option>
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+      </select>
+      <button type="submit">+</button>
+      <br />
+      <hr />
+    </form>
+    <a href="/report"><button>Report</button></a>
+  </body>
+</html>
